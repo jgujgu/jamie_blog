@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+  <head>
+    <%= render 'layouts/monologue/application/head' %>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="header col-xs-12">
+          <div class="well">
+            <%= rss_icon %>
+            <h3><a href="<%= root_path %>"><%=Monologue::Config.site_name%></a></h3>
+            <h4><%=Monologue::Config.site_subtitle%></h4>
+            <%= render partial: "layouts/monologue/application/social_icons" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-9">
+          <% flash.each do |name, msg| %>
+            <div class="flash-notice">
+              <%= msg %>
+            </div>
+          <% end %>
+
+          <%= yield %>
+        </div>
+        <div class="col-md-3">
+          <%= render 'layouts/monologue/application/sidebar' %>
+        </div>
+      </div>
+    </div>
+    <% if content_for?(:footer) %>
+      <footer>
+        <%= yield :footer %>
+      </footer>
+    <% end %>
+    <%= render 'layouts/monologue/application/disqus' %>
+    <%= render 'layouts/monologue/application/gauge_analytics' %>
+  </body>

@@ -11,4 +11,5 @@ Monologue.config do |config|
   config.preview_size = 1000
 
   #config.disqus_shortname = "my_disqus_shortname"
+  config.sidebar = ["latest_posts", "latest_tweets", "categories", "tag_cloud"]
 end

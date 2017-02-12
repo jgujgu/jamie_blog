@@ -1,0 +1,15 @@
+<% if Monologue::Config.sidebar %>
+  <div class="sidebar-nav-fixed affix">
+    <div class="well">
+      <ul class="nav">
+        <% Monologue::Config.sidebar.each do |ext| %>
+          <li>
+            <div class="collapsible-body">
+              <%= render partial: "monologue/sidebar/#{ext}" %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
