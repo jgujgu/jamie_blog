@@ -1,0 +1,20 @@
+<header class="post-header">
+  <h1><%= link_to post.title, post.full_url %></h1>
+  <div class="posted">
+    <h3>
+      <span data-monologue="user">
+        <%= post.user.name %>
+      </span>
+    </h3>
+    <h5>
+      <span data-monologue="time">
+        <time datetime="<%= post.published_at %>">
+          <%= I18n.localize(post.published_at.to_date, format: :long) %>
+        </time>
+      </span>
+    </h5>
+    <span data-monologue="disqus">
+      <a href="<%= post.full_url + "#disqus_thread" %>"></a>
+    </span>
+  </div>
+</header>
