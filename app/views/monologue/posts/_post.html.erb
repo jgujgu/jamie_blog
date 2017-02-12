@@ -4,10 +4,10 @@
 
     <%= truncate_html(post.content, length: Monologue::Config.preview_size, omission: '...') %>
 
+    <%= link_to t(".readmore"), post.full_url, class: "btn btn-success" %>
     <div class="tags" data-monologue="tags">
       <%= render post.tags %>
     </div>
-    <%= link_to t(".readmore"), post.full_url, class: "button" %>
   </div>
 </div>
 
